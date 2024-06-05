@@ -9,9 +9,9 @@ class Proker extends Model
 {
     use HasFactory;
 
-    // Atur nama tabel di sini
-    protected $primaryKey = 'id_proker';
+    // Atur nama tabel dan primary key
     protected $table = 'proker';
+    protected $primaryKey = 'id_proker';
     protected $fillable = ['uraian', 'level', 'parent'];
 
     // Definisikan relasi dengan model Rencana

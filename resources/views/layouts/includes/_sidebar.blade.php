@@ -1,43 +1,140 @@
-<div id="sidebar-nav" class="sidebar">
-    <div class="sidebar-scroll">
-        <nav>
-            <ul class="nav">
-                <li><a href="/" id="dashboard" class="{{ request()->is('/') ? 'active' : '' }}"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                <li><a href="/program" id="program" class="{{ request()->is('program') ? 'active' : '' }}"><i class="lnr lnr-pencil"></i> <span>Program</span></a></li>
-                <li><a href="/rencaran" id="rencaran" class="{{ request()->is('rencaran') ? 'active' : '' }}"><i class="lnr lnr-pushpin"></i> <span>Rencana Anggaran</span></a></li>
-                
-                <li>
-                    <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Surat</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                    <div id="subPages" class="collapse ">
-                        <ul class="nav">
-                            <li><a href="page-profile.html" class="">Surat Permintaan Pembayaran</a></li>
-                            <li><a href="page-login.html" class="">Surat Perintah Membayar</a></li>
-                            <li><a href="page-lockscreen.html" class="">Laporan Penggunaan Dana</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
-                <li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
-                <li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
-            </ul>
-        </nav>
-    </div>
-</div>
+<ul class="sidebar-nav" id="sidebar-nav">
 
-<script>
-   document.addEventListener("DOMContentLoaded", function() {
-    var sidebarItems = document.querySelectorAll("#sidebar-nav .nav a");
-    sidebarItems.forEach(function(item) {
-        item.addEventListener("click", function() {
-            // Hapus kelas 'active' dari semua elemen sidebarItems
-            sidebarItems.forEach(function(item) {
-                item.classList.remove("active");
-            });
-
-            // Tambahkan kelas 'active' hanya pada elemen yang diklik
-            this.classList.add("active");
-        });
-    });
-});
-
-</script>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="/dashboard">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!<!-- End Dashboard Nav -->
+  
+        <li class="nav-heading">Menu</li>
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/program">
+            <i class="bi bi-pencil-square"></i>
+            <span>Program</span>
+          </a>
+        </li><!-- End Program Page Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/rencaran">
+            <i class="bi bi-clipboard-data"></i>
+            <span>Rencana Anggaran</span>
+          </a>
+        </li><!-- End Rencana Anggaran Page Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/spp">
+            <i class="bi bi-envelope"></i>
+            <span>Permintaan Pembayaran</span>
+          </a>
+        </li><!-- End Contact Page Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-register.html">
+            <i class="bi bi-card-list"></i>
+            <span>Register</span>
+          </a>
+        </li><!-- End Register Page Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-login.html">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Login</span>
+          </a>
+        </li><!-- End Login Page Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-error-404.html">
+            <i class="bi bi-dash-circle"></i>
+            <span>Error 404</span>
+          </a>
+        </li><!-- End Error 404 Page Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-blank.html">
+            <i class="bi bi-file-earmark"></i>
+            <span>Blank</span>
+          </a>
+        </li><!-- End Blank Page Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="components-alerts.html">
+                <i class="bi bi-circle"></i><span>Alerts</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-accordion.html">
+                <i class="bi bi-circle"></i><span>Accordion</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-badges.html">
+                <i class="bi bi-circle"></i><span>Badges</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-breadcrumbs.html">
+                <i class="bi bi-circle"></i><span>Breadcrumbs</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-buttons.html">
+                <i class="bi bi-circle"></i><span>Buttons</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-cards.html">
+                <i class="bi bi-circle"></i><span>Cards</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-carousel.html">
+                <i class="bi bi-circle"></i><span>Carousel</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-list-group.html">
+                <i class="bi bi-circle"></i><span>List group</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-modal.html">
+                <i class="bi bi-circle"></i><span>Modal</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-tabs.html">
+                <i class="bi bi-circle"></i><span>Tabs</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-pagination.html">
+                <i class="bi bi-circle"></i><span>Pagination</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-progress.html">
+                <i class="bi bi-circle"></i><span>Progress</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-spinners.html">
+                <i class="bi bi-circle"></i><span>Spinners</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-tooltips.html">
+                <i class="bi bi-circle"></i><span>Tooltips</span>
+              </a>
+            </li>
+          </ul>
+        </li><!-- End Components Nav -->
+  
+      </ul>
+  

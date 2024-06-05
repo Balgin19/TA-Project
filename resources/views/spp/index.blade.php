@@ -1,76 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Surat Pembayaran</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Detail Surat Pembayaran</h1>
-        </div>
-        
-        @foreach ($spp as $item)
-            <div class="spp-info">
-                <h2>Info Surat</h2>
-                <p>No. SPP: {{ $item->no_spp }}</p>
-                <p>Kepentingan: {{ $item->kepentingan }}</p>
-                <p>Tanggal: {{ $item->tanggal }}</p>
-            </div>
+@extends('layouts.master')
 
-            <!-- Menampilkan detail pembayaran -->
-            <div class="detail-pembayaran">
-                <h2>Detail Pembayaran</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID Rencana</th>
-                            <th>Harga</th>
-                            <th>Jumlah</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($details[$item->id_spp] as $detail)
-                            <tr>
-                                <td>{{ $detail->id_rencana }}</td>
-                                <td>{{ $detail->harga }}</td>
-                                <td>{{ $detail->jumlah }}</td>
-                                <td>{{ $detail->keterangan }}</td>
+@section('content')
+
+<div class="pagetitle">
+    <h1 style="display: inline-block;">Permintaan Pembayaran</h1>
+    <a style="float: right;" href="{{ route('spp.tambah') }}" class="btn btn-primary btn-sm">Buat Permintaan</a>
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Menu</a></li>
+            <li class="breadcrumb-item">Permintaan Pembayaran</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <!-- Table with stripped rows -->
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr style="text-align: center;">
+                                <th scope="col" style="width: 5%;">No</th>
+                                <th scope="col" style="width: 12%;">Tanggal</th>
+                                <th scope="col" style="width: 15%;">Nomor Surat</th>
+                                <th scope="col" style="width: 10%;">Bagian</th>
+                                <th scope="col" style="width: 30%;">Status</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            @php $i = 1 @endphp <!-- Inisialisasi variabel nomor -->
+                            @foreach($spp as $item)
+                            <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>{{ $item->tanggal }}</td>
+                                <td><a href="{{ route('spp.show', $item->id) }}">{{ $item->nomor_spp }}</a></td>
+                                <td>{{ $item->bagian }}</td>
+                                <td>
+                                    @if ($item->approve_kepala)
+                                    <span class="badge rounded-pill bg-success">Disetujui</span>
+                                    @else
+                                    <span class="badge rounded-pill bg-warning">Menunggu</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    
+                </div>
             </div>
-        @endforeach
+        </div>
     </div>
-</body>
-</html>
+</section>
+
+@stop

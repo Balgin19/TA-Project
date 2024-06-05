@@ -1,53 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Dashboard | Klorofil - Free Bootstrap Dashboard Template</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="{{('/admin/assets/vendor/bootstrap/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" href="{{('/admin/assets/vendor/font-awesome/css/font-awesome.min.css')}}">
-	<link rel="stylesheet" href="{{('/admin/assets/vendor/linearicons/style.css')}}">
-	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="{{('/admin/assets/css/main.css')}}">
-	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-	<link rel="stylesheet" href="{{('/admin/assets/css/demo.css')}}">
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{('/admin/assets/img/favicon.png" rel="icon')}}">
+  <link href="{{('/admin/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{('/admin/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{('/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{('/admin/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{('/admin/assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
+  <link href="{{('/admin/assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+  <link href="{{('/admin/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{('/admin/assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{('/admin/assets/css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 7 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
-	<!-- WRAPPER -->
-	<div id="wrapper">
-		<!-- NAVBAR -->
-		@include('layouts.includes._navbar')
-		<!-- END NAVBAR -->
-		<!-- LEFT SIDEBAR -->
-		@include('layouts.includes._sidebar')
-		<!-- END LEFT SIDEBAR -->
-		<!-- MAIN -->
-		@yield('content')
-		<!-- END MAIN -->
-		<div class="clearfix"></div>
-		<footer>
-			<div class="container-fluid">
-				<p class="copyright">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-</p>
-			</div>
-		</footer>
-	</div>
-	<!-- END WRAPPER -->
-	<!-- Javascript -->
-	<script src="{{('/admin/assets/vendor/jquery/jquery.min.js')}}"></script>
-	<script src="{{('/admin/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-	<script src="{{('/admin/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
-	<script src="{{('/admin/assets/scripts/klorofil-common.js')}}"></script>
-	
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+	@include('layouts.includes._navbar')
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+	@include('layouts.includes._sidebar')
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+	@yield('content')
+  </main><!-- End #main -->
+  
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+   @include('layouts.includes._footer')
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{('/admin/assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
+  <script src="{{('/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{('/admin/assets/vendor/chart.js/chart.umd.js')}}"></script>
+  <script src="{{('/admin/assets/vendor/echarts/echarts.min.js')}}"></script>
+  <script src="{{('/admin/assets/vendor/quill/quill.min.js')}}"></script>
+  <script src="{{('/admin/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
+  <script src="{{('/admin/assets/vendor/tinymce/tinymce.min.js')}}"></script>
+  <script src="{{('/admin/assets/vendor/php-email-form/validate.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{('/admin/assets/js/main.js')}}"></script>
+
 </body>
 
 </html>

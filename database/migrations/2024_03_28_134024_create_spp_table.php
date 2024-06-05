@@ -1,34 +1,38 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateSppTable extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('spp', function (Blueprint $table) {      
-            $table->id('id_spp');
-            $table->string('no_spp');
-            $table->string('id_bagian');
+        Schema::create('spp', function (Blueprint $table) {
+            $table->id(); // Automatically creates an unsignedBigInteger primary key column
+            $table->string('nomor_spp', 50)->unique();
+            $table->string('bagian');
             $table->string('kepentingan');
-            $table->date('hari');
             $table->date('tanggal');
-            $table->string('approve_kepala');
-            $table->integer('id_user');
+            $table->boolean('approve_kepala')->default(false); // Kolom boolean dengan default false
             $table->timestamps();
+            
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('spp');
     }
-};
+}

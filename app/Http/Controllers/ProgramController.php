@@ -7,16 +7,12 @@ use App\Models\Proker;
 
 class ProgramController extends Controller
 {
-
     public function program(Request $request)
     {
-        if($request->has('cari')){
-        
-        $program = \App\Models\Proker::where('uraian','LIKE','%'.$request->cari.'%')->get();
-        }else{
-            
+        if ($request->has('cari')) {
+            $program = Proker::where('uraian', 'LIKE', '%' . $request->cari . '%')->get();
+        } else {
             $program = Proker::all();
-       
         }
 
         // Mengirim data proker ke view untuk ditampilkan

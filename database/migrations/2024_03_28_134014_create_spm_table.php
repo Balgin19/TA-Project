@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('spm', function (Blueprint $table) {          
             $table->id('id_spm');
-            $table->string('no_spm');
+            $table->string('nomor_spm');
             $table->string('dari');
             $table->string('kepada');
             $table->string('dibayarkan_ke');
             $table->string('uang');
             $table->string('keperluan');
-            $table->date('hari');
             $table->date('tanggal');
             $table->integer('id_spp');
             $table->timestamps();

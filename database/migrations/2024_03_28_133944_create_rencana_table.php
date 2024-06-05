@@ -11,6 +11,7 @@ return new class extends Migration
     {
         Schema::create('rencana', function (Blueprint $table) {
             $table->id('id_rencana');
+            $table->string('bagian');
             $table->unsignedBigInteger('id_proker');
             $table->decimal('volume', 10, 0);
             $table->string('jenis');

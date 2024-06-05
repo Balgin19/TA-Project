@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('spd', function (Blueprint $table) {
             $table->id('id_spd');
-            $table->string('id_bagian');
+            $table->string('bagian');
             $table->string('kepentingan');
             $table->string('tahun_anggaran');
             $table->integer('id_spp');
